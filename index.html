@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Future Interactive</title>
+<title>AI Future Lab</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -11,35 +11,35 @@
 
 <div class="bg"></div>
 
-<header class="nav">
-  <div class="logo">AI FUTURE LAB</div>
+<header>
+  <h1>🌌 AI FUTURE LAB</h1>
+  <p>人类未来实验模拟系统</p>
 </header>
 
-<main class="shell">
-  <section class="hero">
-    <h1>探索 AI 未来世界</h1>
-    <p>输入问题，看看“未来AI”如何回答你</p>
-  </section>
+<section class="panel">
+  <input id="input" placeholder="输入你的问题，例如：AI会统治世界吗？">
+  <button onclick="askAI()">探索答案</button>
+</section>
 
-  <section class="box">
-    <input id="input" type="text" placeholder="输入你的问题..." />
-    <button onclick="askAI()">提问 AI</button>
-  </section>
+<section class="panel actions">
+  <button onclick="generateEvent()">生成未来事件 🎲</button>
+  <button class="secondary" onclick="unlock()">触发AI实验 ⚡</button>
+</section>
 
-  <section class="box">
-    <button class="secondary" onclick="generateEvent()">生成未来事件</button>
-  </section>
+<section class="card">
+  <h2>🧠 AI回应</h2>
+  <p id="answer">等待你的问题...</p>
+</section>
 
-  <section class="card">
-    <h2>AI 回答</h2>
-    <p id="answer">等待你的问题...</p>
-  </section>
+<section class="card">
+  <h2>🌍 未来事件</h2>
+  <p id="event">尚未生成</p>
+</section>
 
-  <section class="card">
-    <h2>未来事件</h2>
-    <p id="event">尚未生成</p>
-  </section>
-</main>
+<section class="card">
+  <h2>🏆 成就系统</h2>
+  <p id="achieve">暂无成就</p>
+</section>
 
 <script src="script.js"></script>
 </body>

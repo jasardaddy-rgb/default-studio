@@ -1,124 +1,60 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   color: white;
   background: #050814;
   text-align: center;
-  overflow-x: hidden;
 }
 
 /* 背景 */
 .bg {
   position: fixed;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   background: radial-gradient(circle at top, #1a2b4f, #050814);
   z-index: -1;
   transition: 0.6s;
 }
 
-/* 顶部 */
-.nav {
-  padding: 20px;
-  font-weight: bold;
-  color: #4da3ff;
+header {
+  padding: 30px;
 }
 
-/* 输入区 */
-.box {
+header h1 {
+  font-size: 32px;
+}
+
+.panel {
   margin: 20px;
 }
 
 input {
-  padding: 10px;
-  width: min(60%, 420px);
-  border-radius: 8px;
+  width: 70%;
+  padding: 12px;
+  border-radius: 10px;
   border: none;
-  outline: none;
 }
 
 button {
   padding: 10px 15px;
-  margin-left: 10px;
+  margin: 10px;
   border: none;
   background: #4da3ff;
   color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.25s ease, opacity 0.25s ease;
+  transition: 0.3s;
 }
 
 button:hover {
-  transform: translateY(-2px);
-  opacity: 0.95;
+  transform: scale(1.05);
 }
 
-button.secondary {
-  background: #1d4ed8;
-}
-
-/* 卡片 */
 .card {
+  width: 80%;
   margin: 20px auto;
-  width: min(80%, 900px);
   padding: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255,255,255,0.06);
   border-radius: 15px;
   backdrop-filter: blur(10px);
-  text-align: left;
-}
-
-.hero {
-  padding: 80px 20px 20px;
-}
-
-.hero h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
-  margin-bottom: 10px;
-}
-
-.hero p,
-.card p {
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.75;
-}
-
-footer {
-  padding: 28px 20px 40px;
-  color: rgba(255, 255, 255, 0.55);
-}
-
-/* 手机 */
-@media (max-width: 600px) {
-  .nav {
-    padding: 16px 20px;
-  }
-
-  .hero {
-    padding-top: 56px;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .box {
-    margin: 16px 12px;
-  }
-
-  input {
-    width: 100%;
-    display: block;
-    margin-bottom: 12px;
-  }
-
-  button {
-    width: 100%;
-    margin-left: 0;
-  }
-
-  .card {
-    width: min(92%, 900px);
-    text-align: left;
-  }
 }
