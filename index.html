@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Future Vision</title>
+<title>AI Future Interactive</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,38 +12,34 @@
 <div class="bg"></div>
 
 <header class="nav">
-  <div class="logo">AI FUTURE</div>
-  <div class="menu">
-    <a href="#vision">未来</a>
-    <a href="#impact">影响</a>
-    <a href="#world">世界</a>
-  </div>
+  <div class="logo">AI FUTURE LAB</div>
 </header>
 
-<section class="hero">
-  <h1>AI 未来的可能性</h1>
-  <p>探索人工智能如何改变人类社会、科技与生活</p>
-  <button onclick="changeTheme()">改变未来视角</button>
-</section>
+<main class="shell">
+  <section class="hero">
+    <h1>探索 AI 未来世界</h1>
+    <p>输入问题，看看“未来AI”如何回答你</p>
+  </section>
 
-<section id="vision" class="card">
-  <h2>未来愿景</h2>
-  <p>AI 将成为人类的第二大脑，帮助我们学习、创造和决策。</p>
-</section>
+  <section class="box">
+    <input id="input" type="text" placeholder="输入你的问题..." />
+    <button onclick="askAI()">提问 AI</button>
+  </section>
 
-<section id="impact" class="card">
-  <h2>对世界的影响</h2>
-  <p>工作方式、教育系统、医疗与城市都会被重构。</p>
-</section>
+  <section class="box">
+    <button class="secondary" onclick="generateEvent()">生成未来事件</button>
+  </section>
 
-<section id="world" class="card">
-  <h2>未来世界</h2>
-  <p>人与 AI 共存，形成新的文明结构与社会形态。</p>
-</section>
+  <section class="card">
+    <h2>AI 回答</h2>
+    <p id="answer">等待你的问题...</p>
+  </section>
 
-<footer>
-  <p>© 2026 AI Future Vision</p>
-</footer>
+  <section class="card">
+    <h2>未来事件</h2>
+    <p id="event">尚未生成</p>
+  </section>
+</main>
 
 <script src="script.js"></script>
 </body>

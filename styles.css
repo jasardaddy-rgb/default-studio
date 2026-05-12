@@ -1,195 +1,124 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
-}
-
-:root {
-  --bg-accent: 212;
-}
-
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   color: white;
   background: #050814;
+  text-align: center;
   overflow-x: hidden;
-  min-height: 100vh;
 }
 
 /* 背景 */
 .bg {
   position: fixed;
   inset: 0;
-  background:
-    radial-gradient(circle at top, hsla(var(--bg-hue, 220), 60%, 22%, 0.95), transparent 45%),
-    radial-gradient(circle at 20% 20%, hsla(var(--bg-accent, 212), 90%, 58%, 0.22), transparent 22%),
-    linear-gradient(180deg, #0b1731 0%, #050814 55%, #04050b 100%);
+  background: radial-gradient(circle at top, #1a2b4f, #050814);
   z-index: -1;
-  transition: 0.8s;
+  transition: 0.6s;
 }
 
-.bg::before,
-.bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
-.bg::before {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 80px 80px;
-  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 90%);
-  opacity: 0.35;
-}
-
-.bg::after {
-  background:
-    radial-gradient(circle at 15% 15%, rgba(77, 163, 255, 0.16), transparent 18%),
-    radial-gradient(circle at 85% 20%, rgba(96, 165, 250, 0.12), transparent 20%),
-    radial-gradient(circle at 50% 80%, rgba(45, 212, 191, 0.08), transparent 18%);
-  filter: blur(18px);
-}
-
-/* 导航 */
+/* 顶部 */
 .nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-  padding: 20px 40px;
-  backdrop-filter: blur(12px);
-  background: rgba(0, 0, 0, 0.3);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.logo {
-  color: #4da3ff;
+  padding: 20px;
   font-weight: bold;
-  letter-spacing: 2px;
+  color: #4da3ff;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+/* 输入区 */
+.box {
+  margin: 20px;
 }
 
-.menu a {
-  margin-left: 20px;
-  color: white;
-  text-decoration: none;
-  opacity: 0.7;
-  transition: 0.3s;
-}
-
-.menu a:hover {
-  opacity: 1;
-}
-
-/* 首页 */
-.hero {
-  text-align: center;
-  padding: 120px 20px 100px;
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
-  line-height: 1.05;
-  animation: fadeIn 1s ease;
-  letter-spacing: -0.03em;
-}
-
-.hero p {
-  margin-top: 10px;
-  opacity: 0.72;
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
+input {
+  padding: 10px;
+  width: min(60%, 420px);
+  border-radius: 8px;
+  border: none;
+  outline: none;
 }
 
 button {
-  margin-top: 20px;
-  padding: 12px 22px;
+  padding: 10px 15px;
+  margin-left: 10px;
   border: none;
-  background: linear-gradient(135deg, #4da3ff, #1d4ed8);
+  background: #4da3ff;
   color: white;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
-  box-shadow: 0 12px 30px rgba(77, 163, 255, 0.22);
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
 button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+  opacity: 0.95;
+}
+
+button.secondary {
+  background: #1d4ed8;
 }
 
 /* 卡片 */
 .card {
-  width: min(80%, 980px);
-  margin: 40px auto;
-  padding: 24px;
+  margin: 20px auto;
+  width: min(80%, 900px);
+  padding: 20px;
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.24);
-  animation: fadeIn 1s ease;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  text-align: left;
 }
 
-.card h2 {
-  margin-bottom: 14px;
-  color: #d8ecff;
+.hero {
+  padding: 80px 20px 20px;
 }
 
-.card p + p {
-  margin-top: 10px;
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  margin-bottom: 10px;
+}
+
+.hero p,
+.card p {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
 }
 
 footer {
-  text-align: center;
   padding: 28px 20px 40px;
-  opacity: 0.55;
-}
-
-/* 动画 */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* 手机 */
 @media (max-width: 600px) {
+  .nav {
+    padding: 16px 20px;
+  }
+
   .hero {
-    padding: 90px 18px 70px;
+    padding-top: 56px;
   }
 
   .hero h1 {
     font-size: 2rem;
   }
 
-  .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 16px 20px;
+  .box {
+    margin: 16px 12px;
   }
 
-  .menu {
+  input {
     width: 100%;
-    gap: 12px;
+    display: block;
+    margin-bottom: 12px;
   }
 
-  .menu a {
+  button {
+    width: 100%;
     margin-left: 0;
   }
 
   .card {
-    width: min(92%, 980px);
-    padding: 20px;
+    width: min(92%, 900px);
+    text-align: left;
   }
 }
